@@ -1,0 +1,7 @@
+interface:
+  display_name: "Book2Invest"
+  short_description: "把五本投资经典整合成可执行的基金投资、定投与养老配置体系"
+  brand_color: "#2F6B4F"
+  default_prompt: "Use $book2invest to answer my investment question with the right book, current data, and a practical action plan."
+policy:
+  allow_implicit_invocation: true
