@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101411"/>
+      <stop offset="1" stop-color="#18211b"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7dd3a7"/>
+      <stop offset="1" stop-color="#c4e8a8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000000" flood-opacity=".28"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#7dd3a7"/>
+    </marker>
+    <style>
+      .eyebrow { font: 600 20px -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; letter-spacing: .16em; }
+      .title { font: 700 54px -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; letter-spacing: -.04em; }
+      .sub { font: 400 22px -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; }
+      .step { font: 700 28px -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; }
+      .body { font: 400 19px -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; }
+      .mono { font: 500 18px ui-monospace,SFMono-Regular,Menlo,monospace; }
+      .num { font: 800 54px -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="760" rx="32" fill="url(#bg)"/>
+  <circle cx="1450" cy="50" r="260" fill="#7dd3a7" opacity=".06"/>
+  <circle cx="100" cy="740" r="250" fill="#f0b35a" opacity=".05"/>
+
+  <text x="84" y="68" class="eyebrow" fill="#7dd3a7">BOOK2INVEST · 3-STEP QUICKSTART</text>
+  <text x="84" y="140" class="title" fill="#f7f3ea">三步进入“满血状态”</text>
+  <text x="84" y="180" class="sub" fill="#aeb9b0">方法论负责判断，数据渠道负责事实，智能体负责执行。</text>
+
+  <g filter="url(#shadow)">
+    <rect x="82" y="228" width="430" height="364" rx="24" fill="#1a211c" stroke="#31443a"/>
+    <rect x="585" y="228" width="430" height="364" rx="24" fill="#1a211c" stroke="#31443a"/>
+    <rect x="1088" y="228" width="430" height="364" rx="24" fill="#1a211c" stroke="#31443a"/>
+  </g>
+
+  <circle cx="130" cy="280" r="32" fill="#7dd3a7"/>
+  <text x="130" y="293" text-anchor="middle" class="num" fill="#102019">1</text>
+  <text x="180" y="290" class="step" fill="#f7f3ea">安装 Skill</text>
+  <text x="116" y="346" class="body" fill="#b9c4bb">Codex：克隆到 skills 目录</text>
+  <rect x="112" y="372" width="370" height="94" rx="14" fill="#101511" stroke="#2d3a32"/>
+  <text x="132" y="406" class="mono" fill="#86e0b0">git clone</text>
+  <text x="132" y="438" class="mono" fill="#dde6df">KeepLjx/book2invest</text>
+  <text x="116" y="508" class="body" fill="#b9c4bb">WorkBuddy：从 Skill / 扩展入口</text>
+  <text x="116" y="542" class="body" fill="#b9c4bb">导入整个仓库目录</text>
+
+  <circle cx="633" cy="280" r="32" fill="#f0b35a"/>
+  <text x="633" y="293" text-anchor="middle" class="num" fill="#24170a">2</text>
+  <text x="683" y="290" class="step" fill="#f7f3ea">连接数据</text>
+  <text x="619" y="346" class="body" fill="#b9c4bb">任选一种数据渠道：</text>
+  <rect x="615" y="372" width="370" height="64" rx="14" fill="#101511" stroke="#6e5533"/>
+  <circle cx="643" cy="404" r="12" fill="#f0b35a"/>
+  <text x="670" y="412" class="body" fill="#f5ead8">iFinD API Key</text>
+  <rect x="615" y="452" width="370" height="94" rx="14" fill="#101511" stroke="#315b46"/>
+  <circle cx="643" cy="484" r="12" fill="#7dd3a7"/>
+  <text x="670" y="492" class="body" fill="#e8f4ec">WorkBuddy 腾讯自选股</text>
+  <text x="670" y="523" class="mono" fill="#94a49a">skill_2053083170922696704</text>
+
+  <circle cx="1136" cy="280" r="32" fill="#8cb8ff"/>
+  <text x="1136" y="293" text-anchor="middle" class="num" fill="#0d1728">3</text>
+  <text x="1186" y="290" class="step" fill="#f7f3ea">调用 Book2Invest</text>
+  <rect x="1118" y="338" width="370" height="164" rx="14" fill="#101511" stroke="#30455f"/>
+  <text x="1138" y="376" class="mono" fill="#a9cfff">Use $book2invest.</text>
+  <text x="1138" y="410" class="body" fill="#dce6ef">先取最新数据，再判断估值、</text>
+  <text x="1138" y="442" class="body" fill="#dce6ef">仓位、买卖条件和风险边界。</text>
+  <rect x="1118" y="522" width="370" height="34" rx="17" fill="#173527"/>
+  <text x="1303" y="546" text-anchor="middle" class="mono" fill="#86e0b0">DATA + DATE + METHOD</text>
+
+  <line x1="512" y1="410" x2="572" y2="410" stroke="#7dd3a7" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="1015" y1="410" x2="1075" y2="410" stroke="#7dd3a7" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <rect x="82" y="640" width="1436" height="62" rx="18" fill="#152019" stroke="#315b46"/>
+  <text x="116" y="679" class="body" fill="#dce8df">没有数据：只能讲方法。</text>
+  <text x="470" y="679" class="body" fill="#7dd3a7">接入数据：才能判断“现在贵不贵、该不该买、如何分批”。</text>
+  <text x="1409" y="679" text-anchor="end" class="mono" fill="#98aa9f">Codex / WorkBuddy / Skills</text>
+</svg>
