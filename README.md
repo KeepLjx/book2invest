@@ -66,10 +66,23 @@ git clone https://gitee.com/KeepLjx/book2invest.git \
 
 ### 方式一：iFinD API
 
-1. 登录同花顺 iFinD，在开放平台或数据接口控制台申请 API Key。
-2. 按所用智能体的要求，通过 API、MCP 或工具适配器配置 Key。
-3. Key 只保存在环境变量或密钥管理器中，不提交到仓库，不截图，也不直接写进对话。
-4. 先用一组已知数据测试连接，确认返回值、字段口径和数据日期无误。
+打开 [同花顺数据接口官网](https://quantapi.10jqka.com.cn/)，页面顶部可以看到“登录”“申请试用”和主要数据能力：
+
+![同花顺 iFinD 数据接口官网](docs/images/ifind-api-home.png)
+
+1. 点击右上角“登录”。没有账号时，按页面提示注册，或根据需要申请试用。
+2. 登录后进入 iFinD 数据接口控制台，按当前账号版本开通接口能力并创建/查看 API Key。具体菜单名称可能随账号版本更新，以页面显示为准。
+3. 把 API Key 配置到 Codex、WorkBuddy 或其他智能体支持的 API、MCP 或工具适配器中。
+4. Key 只保存在环境变量或密钥管理器中，不提交到仓库，不截图，也不直接写进对话。
+5. 先用一组已知数据测试连接，确认返回值、字段口径和数据日期无误。
+
+登录入口和账号验证界面如下：
+
+![同花顺 iFinD 登录入口](docs/images/ifind-api-login.png)
+
+免费版和试用版的接口额度不同，正式使用前可先在官方[帮助中心 → 权限说明](https://quantapi.10jqka.com.cn/gwstatic/static/ds_web/quantapi-web/help-center/permission.html)核对当前额度：
+
+![同花顺 iFinD 免费版与试用版权限说明](docs/images/ifind-permissions.png)
 
 ### 方式二：WorkBuddy 免费数据 Skill
 
