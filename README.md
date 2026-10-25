@@ -19,7 +19,7 @@
 将仓库克隆到 Codex 的用户级 Skill 目录：
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/book2invest.git \
+git clone https://github.com/KeepLjx/book2invest.git \
   "${CODEX_HOME:-$HOME/.codex}/skills/book2invest"
 ```
 
