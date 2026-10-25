@@ -1,6 +1,12 @@
 # Book2Invest
 
-把银行螺丝钉的五本基金投资书整理成一个可安装的 Codex Skill，用同一套流程处理基金选择、估值、定投、组合配置与退休规划。
+把银行螺丝钉的五本基金投资书整理成一个跨智能体可用的 Skill，用同一套流程处理基金选择、估值、定投、组合配置与退休规划。
+
+## 兼容智能体
+
+本项目采用通用的 `SKILL.md` + `references/` 目录结构，不绑定 Codex 的专有接口。Codex、WorkBuddy，以及其他支持加载本地 Skill 目录的智能体都可以使用；调用方式可以是 `$book2invest`，也可以直接用自然语言提出投资问题。
+
+不同智能体的安装入口和调用语法可能不同，但核心要求相同：完整保留仓库中的 `SKILL.md` 与 `references/` 目录，不要把其中的 Markdown 文件拆散。
 
 ## 覆盖范围
 
@@ -16,10 +22,19 @@
 
 ## 安装
 
+### Codex
+
 将仓库克隆到 Codex 的用户级 Skill 目录：
 
 ```bash
 git clone https://github.com/KeepLjx/book2invest.git \
+  "${CODEX_HOME:-$HOME/.codex}/skills/book2invest"
+```
+
+国内网络也可以从 Gitee 克隆：
+
+```bash
+git clone https://gitee.com/KeepLjx/book2invest.git \
   "${CODEX_HOME:-$HOME/.codex}/skills/book2invest"
 ```
 
@@ -36,6 +51,35 @@ git clone https://github.com/KeepLjx/book2invest.git \
     ├── active-fund-investment/
     └── personal-pension-investment/
 ```
+
+### WorkBuddy 与其他智能体
+
+在智能体的 Skill / 扩展入口中导入本仓库目录，或把目录放到该智能体支持的本地 Skill 路径。目录名称保持为 `book2invest`，并确认 `SKILL.md`、`references/` 和 `agents/openai.yaml` 仍然在一起。
+
+## 数据接入（满血状态）
+
+本 Skill 负责方法论、问题路由和决策框架，不内置实时行情数据库。股票和基金的价格、估值、盈利、股息率、规模、持仓、费率及利率等数据必须从外部数据源获取，不能用书中的历史数字代替当前市场数据。
+
+### 方式一：iFinD API
+
+在同花顺 iFinD 平台申请 API Key，再通过与所用智能体兼容的 API、MCP 或工具适配器接入。API Key 应保存在环境变量或密钥管理器中，不要提交到仓库，也不要直接写进对话。
+
+### 方式二：WorkBuddy 免费数据 Skill
+
+在 WorkBuddy 中搜索并启用：
+
+- 名称：**腾讯自选股-金融数据查询**
+- Skill ID：`skill_2053083170922696704`
+
+启用后，可以用它查询股票、基金和行情相关数据，再把结果交给 `book2invest` 做估值判断、组合分析和行动计划。免费额度、覆盖字段和可用性以 WorkBuddy 页面为准。
+
+### “满血”工作流
+
+1. `book2invest` 先确定需要哪些数据和判断规则。
+2. iFinD 或“腾讯自选股-金融数据查询”获取当前数据并注明日期。
+3. `book2invest` 结合五本书的方法论给出结论、执行条件和风险边界。
+
+没有接入数据渠道时，Skill 仍可用于知识讲解、方法论梳理和基于用户提供数据的条件分析，但无法可靠回答“现在是否低估”“今天该不该买卖”等依赖实时数据的问题。接入 iFinD 或 WorkBuddy 数据 Skill 后，才是完整的数据驱动状态。
 
 ## 使用
 
